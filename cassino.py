@@ -3,6 +3,7 @@ import random ##para que a ordem das frutas sejam aleatorias
 import time ##para o tempo que as frutas fiquem em aleatoriedade
 
 frutas = ["🍓", "🍒", "🍋", "🍉"] ##define as frutas do cassino
+saldo = 1000
 
 print("Bem vindo(a)!")
 
@@ -12,10 +13,16 @@ while True:  ##para que o codigo fique em loop
 
     if play == "sair":
         print("Você saiu")
+        
         break
     else:
-
-        print("=====Cassino=====")
+        print("")
+        print(f"Seu Saldo: {saldo}")
+        print("")
+        
+        if saldo < 50:
+            print("Saldo Insuficiente!")
+            break
 
     s1 = s2 = s3 = ""
 
@@ -32,6 +39,16 @@ while True:  ##para que o codigo fique em loop
     print()
 
     if s1 == s2 == s3: ##se as 3 frutas forem iguais, jackpot!
-        print("JACKPOT!!🎉🎉🎉")
+        print("")
+        print("JACKPOT!!🎉🎉🎉") 
+        print("Ganhou 1000!")
+        print("")
+
+        saldo += 1000 ##ganha 1000
+
     else:
-        print("Perdeu") ##se não, perdeu
+        print("")
+        print("Perdeu 50 reais") ##se não, perdeu
+        print("")
+
+        saldo -= 50 ##perde 50 
